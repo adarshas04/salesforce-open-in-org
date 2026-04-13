@@ -1,0 +1,1 @@
+{"version":3,"file":"tooling-api.d.ts","sourceRoot":"","sources":["../src/tooling-api.ts"],"names":[],"mappings":"AAmBA;;;GAGG;AACH,wBAAgB,aAAa,IAAI,MAAM,CAQtC;AAED;;GAEG;AACH,wBAAgB,cAAc,CAAC,QAAQ,EAAE,MAAM,GAAG,MAAM,CAIvD;AAED;;;GAGG;AACH,wBAAsB,aAAa,CAAC,QAAQ,EAAE,MAAM,EAAE,YAAY,EAAE,MAAM,EAAE,YAAY,EAAE,MAAM,GAAG,OAAO,CAAC,MAAM,GAAG,IAAI,CAAC,CAuDxH"}

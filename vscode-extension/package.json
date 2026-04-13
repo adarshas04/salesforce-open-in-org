@@ -1,0 +1,106 @@
+{
+  "name": "salesforce-open-in-org",
+  "displayName": "Salesforce Open in Org",
+  "description": "Open any Salesforce metadata file directly in your org with right-click context menu. Supports 15+ metadata types with ID resolution via Tooling API.",
+  "version": "1.0.0",
+  "publisher": "adarsh",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adarsh/salesforce-open-in-org.git",
+    "directory": "vscode-extension"
+  },
+  "keywords": [
+    "salesforce",
+    "sfdx",
+    "metadata",
+    "open in org",
+    "apex",
+    "flow",
+    "lwc"
+  ],
+  "activationEvents": [
+    "onCommand:salesforce-open-in-org.openFile"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "salesforce-open-in-org.openFile",
+        "title": "Open in Salesforce Org",
+        "icon": "$(link-external)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "salesforce-open-in-org.openFile",
+          "group": "navigation",
+          "when": "resourceFilename =~ /\\.(cls|trigger|page|component|flow-meta\\.xml|object|field|layout|permissionset|profile|app|tab)$/"
+        },
+        {
+          "command": "salesforce-open-in-org.openFile",
+          "group": "navigation",
+          "when": "resourcePath =~ /.*lwc.*/"
+        },
+        {
+          "command": "salesforce-open-in-org.openFile",
+          "group": "navigation",
+          "when": "resourcePath =~ /.*aura.*/"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "salesforce-open-in-org.openFile",
+          "group": "navigation",
+          "when": "resourceFilename =~ /\\.(cls|trigger|page|component|flow-meta\\.xml|object|field|layout|permissionset|profile|app|tab)$/"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "salesforce-open-in-org.openFile",
+          "group": "navigation",
+          "when": "resourceFilename =~ /\\.(cls|trigger|page|component|flow-meta\\.xml|object|field|layout|permissionset|profile|app|tab)$/"
+        },
+        {
+          "command": "salesforce-open-in-org.openFile",
+          "group": "navigation",
+          "when": "resourcePath =~ /.*lwc.*/"
+        },
+        {
+          "command": "salesforce-open-in-org.openFile",
+          "group": "navigation",
+          "when": "resourcePath =~ /.*aura.*/"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "salesforce-open-in-org.openFile",
+        "key": "ctrl+shift+o",
+        "mac": "cmd+shift+o",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "@salesforce-open-in-org/core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}
