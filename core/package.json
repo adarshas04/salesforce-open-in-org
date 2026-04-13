@@ -1,0 +1,31 @@
+{
+  "name": "@salesforce-open-in-org/core",
+  "version": "1.0.0",
+  "description": "Core library for Salesforce metadata detection, Tooling API queries, and URL construction",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.map"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adarsh/salesforce-open-in-org.git",
+    "directory": "core"
+  },
+  "keywords": [
+    "salesforce",
+    "metadata",
+    "tooling-api",
+    "sfdx"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^5.3.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "sf-open-in-org",
+  "description": "Salesforce CLI plugin to open metadata files directly in your org",
+  "version": "1.0.0",
+  "author": "adarsh",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "clean": "rm -rf dist",
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "npm run build && npx oclif manifest"
+  },
+  "dependencies": {
+    "@oclif/core": "^3.26.0",
+    "@salesforce/sf-plugins-core": "^9.0.0",
+    "@salesforce-open-in-org/core": "^1.0.0",
+    "open": "^8.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "oclif": "^4.4.0",
+    "typescript": "^5.3.0"
+  },
+  "oclif": {
+    "commands": "./dist/commands",
+    "bin": "sf",
+    "topicSeparator": " ",
+    "topics": {
+      "open": {
+        "description": "Open Salesforce metadata in browser"
+      }
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "oclif.manifest.json",
+    "!dist/**/*.map"
+  ],
+  "keywords": [
+    "salesforce",
+    "sfdx",
+    "sf",
+    "cli",
+    "metadata",
+    "open-in-org"
+  ]
+}
