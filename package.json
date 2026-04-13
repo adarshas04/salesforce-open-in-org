@@ -1,0 +1,30 @@
+{
+  "name": "salesforce-open-in-org-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Open Salesforce metadata files directly in your org — VSCode extension & SF CLI plugin",
+  "workspaces": [
+    "core",
+    "vscode-extension",
+    "sf-plugin"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "build:core": "npm run build -w core",
+    "build:vscode": "npm run build -w vscode-extension",
+    "build:plugin": "npm run build -w sf-plugin",
+    "clean": "rm -rf core/dist vscode-extension/out sf-plugin/dist",
+    "lint": "eslint . --ext .ts",
+    "package:vscode": "cd vscode-extension && npx @vscode/vsce package",
+    "publish:vscode": "cd vscode-extension && npx @vscode/vsce publish",
+    "publish:plugin": "cd sf-plugin && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adarsh/salesforce-open-in-org.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
